@@ -1,7 +1,17 @@
 package labo_json;
 
+import static spark.Spark.*;
+import spark.*;
+
 public class Labo_json {
 
     public static void main(String[] args) {
+
+        get(new Route("/"){
+            @Override
+            public Object handle(Request request, Response response){
+                return "Bienvenue";
+            }
+        });
     }
 }
