@@ -12,7 +12,14 @@ public class Labo_json {
         get(new Route("/"){
             @Override
             public Object handle(Request request, Response response){
-                return "Bienvenue";
+                String file = null;
+                try{
+                    file = FileUtils.readFileToString(new File("views/home.html"));
+                }catch(Exception e){
+                    halt(500);
+                    return null;
+                }
+                return file;
             }
         });
 
