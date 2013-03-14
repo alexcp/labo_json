@@ -40,5 +40,34 @@ public class Labo_json {
                 return null;
             }
         });
+
+        get(new Route("/users/:username"){
+            @Override
+            public Object handle(Request request, Response response){
+                String file = null;
+                try{
+                    file = GithubApi.createUser(request.params(":username")).toJson();
+                }catch(Exception e){
+                    halt(500);
+                    return null;
+                }
+                return file;
+            }
+        });
+
+        get(new Route("/users"){
+            @Override
+            public Object handle(Request request, Response response){
+                String file = null;
+                try{
+                    file = User.list();
+                }catch(Exception e){
+                    halt(500);
+                    return null;
+                }
+                return file;
+            }
+        });
+
     }
 }
