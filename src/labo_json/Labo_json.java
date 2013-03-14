@@ -21,8 +21,10 @@ public class Labo_json {
             public String handle(Request request, Response response) {
                 byte[] out = null;
                 try{
-                out = IOUtils.toByteArray(new FileInputStream("public/"+request.params(":filename")));
-                response.raw().getOutputStream().write(out, 0, out.length);
+                    out = IOUtils.toByteArray(new FileInputStream("public/"+request.params(":filename")));
+                    String extension = request.params(":filename").substring(request.params(":filename").lastIndexOf(".")+1);
+                    response.raw().setContentType("text/"+ extension +";charset=utf-8");
+                    response.raw().getOutputStream().write(out, 0, out.length);
                 }catch(Exception e){
                     halt(404);
                     return null;
