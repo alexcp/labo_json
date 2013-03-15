@@ -44,6 +44,20 @@
       .marketing p + h4 {
         margin-top: 28px;
       }
+
+      .thumbnail{
+        width:50px;
+        height:50px;
+        float:left;
+        margin-right:10px;
+      }
+      li{
+        list-style-type:none;
+        clear:both;
+      }
+      .score{
+        font-weight:bold;
+      }
     </style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -65,24 +79,19 @@
       <div class="jumbotron">
         <h1>Obtenez Votre Score Git</h1>
         <p class="lead">Vérifié votre réputation sur Github.</p>
+        <div id="get_score">
         <form id="score"> 
           <input class="input-large" name="username" type="text" placeholder="Nom d'utilisateur">
         </form>
+      </div>
       </div>
 
       <hr>
 
       <div class="row-fluid marketing">
-        <div class="span6 offset3">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+        <h1>Leader Board</h1>
+        <table class="span6 offset3 table table-striped" id="liste">
+        </table>
       </div>
 
       <hr>
@@ -95,6 +104,8 @@
 
     <script src="/public/jquery-1.9.1.min.js"></script>
     <script src="/public/bootstrap.min.js"></script>
+    <script src="/public/underscore-min.js"></script>
+    <script src="/public/javascript.js"></script>
 
   </body>
 </html>

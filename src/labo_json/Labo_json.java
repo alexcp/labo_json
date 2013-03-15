@@ -30,7 +30,11 @@ public class Labo_json {
                 try{
                     out = IOUtils.toByteArray(new FileInputStream("public/"+request.params(":filename")));
                     String extension = request.params(":filename").substring(request.params(":filename").lastIndexOf(".")+1);
-                    response.raw().setContentType("text/"+ extension +";charset=utf-8");
+                    if(extension.equals("js")){
+                         response.raw().setContentType("application/javascript;charset=utf-8");
+                    }else{
+                         response.raw().setContentType("text/"+ extension +";charset=utf-8");
+                    }
                     response.raw().getOutputStream().write(out, 0, out.length);
                 }catch(Exception e){
                     halt(404);
