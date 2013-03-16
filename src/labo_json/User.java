@@ -43,7 +43,7 @@ public class User {
         Collections.sort(liste, new Comparator<User>(){
             @Override
             public int compare(User user1, User user2){
-                return user1.score() - user2.score();
+                return user2.score() - user1.score();
             }
         });
         return liste;
