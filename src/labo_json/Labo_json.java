@@ -45,7 +45,7 @@ public class Labo_json {
             }
         });
 
-        get(new Route("/users/:username"){
+        post(new Route("/users/:username"){
             @Override
             public Object handle(Request request, Response response){
                 String file = null;

@@ -8,6 +8,7 @@ $(document).ready(function(){
     var username = data.substr(data.indexOf("=")+1);
     $.ajax("/users/" + username,{
       data: data,
+      type: "post",
       dataType: "json",
       timeout: 8000,
       success:function(user){
